@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  </head>
+  <body>
+    <app-header></app-header>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <note-form></note-form>
+          </div>
+          <div class="col-md-8">
+            <div class="tabs">
+              <button class="tab-button active" data-tab="active">
+                Active Notes
+              </button>
+              <button class="tab-button" data-tab="archived">
+                Archived Notes
+              </button>
+            </div>
+
+            <div id="active-tab" class="tab-content active">
+              <h2>My Notes</h2>
+              <loading-indicator id="notes-loading"></loading-indicator>
+              <div id="notes-container" class="notes-grid"></div>
+            </div>
+
+            <div id="archived-tab" class="tab-content">
+              <h2>Archived Notes</h2>
+              <loading-indicator
+                id="archived-notes-loading"
+              ></loading-indicator>
+              <div id="archived-notes-container" class="notes-grid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <app-footer></app-footer>
+  </body>
+</html>
